@@ -1,3 +1,4 @@
-<div *ngFor="let book of book">
-<div>{{book.name}}</div>
-</div>
+<h3>{{ formTypeLabel }} livros</h3>
+
+<shared-livro [formEntity]="formBook" (submit)="submit($event)"></shared-livro>
+

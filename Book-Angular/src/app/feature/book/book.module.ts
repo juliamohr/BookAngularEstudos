@@ -1,15 +1,23 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { ListComponent } from './list/list.component';
 import { LivroComponent } from './livro/livro.component';
-import { BookService } from 'src/app/core/book.service';
 
+import {ReactiveFormsModule} from '@angular/forms';
+
+import { BookRoutingModule } from './book-routing.module';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
-  declarations: [LivroComponent],
+  declarations: [LivroComponent, ListComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    BookRoutingModule,
+    ReactiveFormsModule,
+    SharedModule
+
+
   ],
-  providers: [BookService],
 })
 export class BookModule { }

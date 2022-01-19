@@ -1,0 +1,13 @@
+<form class="example-form" [formGroup]="formEntity">
+  <div class="group">
+  <div *ngFor="let value of keys">
+    <label [for] ="value">{{value}}:</label>
+    <br/>
+    
+    <input type="text" [formControlName]="value" [id]="value"/>
+    <br/>
+    </div>
+  </div>
+  <button  type="button" mat-stroked-button color="accent" (click)="clickOnSubmit()">Enviar</button>
+  <button  type="button" mat-stroked-button color="accent" (click)="goback()">Cancelar</button>
+</form>

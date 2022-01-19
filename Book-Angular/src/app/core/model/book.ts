@@ -1,5 +1,4 @@
-export interface Book
-{
+export interface Book{
 id: number;
 nome: string;
 sinopse: string;
