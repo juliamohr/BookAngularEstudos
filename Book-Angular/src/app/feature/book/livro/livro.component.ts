@@ -21,11 +21,11 @@ export class LivroComponent implements OnInit {
 this.formBook = this.formBuilder.group({
   id: '',
   nome: ['',[Validators.required]],
-autor: '',
-sinopse: '',
-genero: '',
-preço: '',
-imageUrl: '',
+autor: ['',[Validators.required]],
+sinopse:['',[Validators.required]],
+genero: ['',[Validators.required]],
+preço: ['',[Validators.required]],
+imageUrl: ['',[Validators.required]],
 });
 
 const hasId = Boolean (this.activatedRoute.snapshot.params.id);
@@ -36,7 +36,7 @@ this.formTypeLabel = hasId ? 'Atualizar' : 'Cadastrar';
 
 submit (event: Book) {
   this.bookService.upsert(event).subscribe(()=> {
-  this.router.navigate(['..'], {relativeTo:this.activatedRoute});
+  this.router.navigate(['..'], {relativeTo: this.activatedRoute});
   });
 }
 }

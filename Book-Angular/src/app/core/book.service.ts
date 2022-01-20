@@ -24,7 +24,7 @@ export class BookService {
     return this.http.delete(`${this.baseUrl}/${id}`);
   }
   upsert(book: Book){
-    book.preco = Number(book.preco);
+    book.nome = String(book.nome);
     if(book.id){
       return this.http.patch<Book>(`${this.baseUrl}/${book.id}`, book);
     } else {

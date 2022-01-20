@@ -1,21 +1,19 @@
 <div>
-  <input type="text" [(ngModel)]="inputValue" (keyup.enter)="search()" />
-  <button (click)="goToAdd()">Adicionar</button>
-  <button (click)="toLimit()">Limite de 3</button>
-</div>
 
-<table>
-  <tr>
-    <th *ngFor="let header of headers">
-      {{ header }}
-    </th>
-  </tr>
+  <button type="button" mat-stroked-button color="accent" (click)="goToAdd()">Adicione um livro</button>
+<p></p>
+<p-card class="cards" *ngFor="let entity of entities">
+ <h1>Nome: {{ entity.nome }}</h1>
+  <h4>autor: {{entity.autor}} </h4>
+ <h4>Genero:  {{entity.genero}}</h4>
+  <p-header>
+      <img class="img" [src]="entity.imageUrl">
+  </p-header >
+  <div>{{entity.sinopse}}</div>
+  <p-footer>
+    <button type="button" mat-stroked-button color="accent"  (click)="editEntity(entity.id)">Editar</button>
+    <button type="button" mat-stroked-button color="accent" (click)="onDeleteEntity(entity.id)">Deletar</button>
+  </p-footer>
+</p-card>
 
-  <tr *ngFor="let entity of entities">
-    <td *ngFor="let key of keys">{{ entity[key] }}</td>
-    <td>
-      <button (click)="editEntity(entity.id)">Editar</button>
-      <button (click)="onDeleteEntity(entity.id)">Deletar</button>
-    </td>
-  </tr>
-</table>
+

@@ -9,12 +9,14 @@ import { SeacrhEvent } from 'src/app/core/model/SearchEvent';
   styleUrls: ['./list.component.css']
 })
 export class ListComponent implements OnInit {
-  headers: string[] = ['Id', 'Nome', 'Autor', 'Sinopse', 'Genero', 'Preço', 'ImageUrl', 'Actions' ];
-
+  headers: string[] = ['Id', 'Nome', 'Autor', 'Sinopse', 'Genero', 'Preço', 'Actions' ];
+book;
   constructor(private bookService: BookService) { }
 
   ngOnInit(): void {
-
+this.bookService.all().subscribe((value)=>{
+  this.book = value;
+})
   }
 
   deleteBook(event: DeleteEvent): void{

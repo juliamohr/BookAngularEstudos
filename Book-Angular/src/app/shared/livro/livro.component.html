@@ -3,8 +3,9 @@
   <div *ngFor="let value of keys">
     <label [for] ="value">{{value}}:</label>
     <br/>
-    
-    <input type="text" [formControlName]="value" [id]="value"/>
+
+    <input type="text"  [formControlName]="value" [id]="value"/>
+
     <br/>
     </div>
   </div>

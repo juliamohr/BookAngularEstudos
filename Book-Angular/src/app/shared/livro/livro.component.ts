@@ -6,7 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   selector: 'shared-livro',
   templateUrl: './livro.component.html',
   styleUrls: ['./livro.component.css'],
-  
+
 })
 export class LivroComponent implements OnInit {
 
@@ -17,6 +17,7 @@ export class LivroComponent implements OnInit {
   submit = new EventEmitter();
 
   keys: string[];
+  value1: string;
 
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
@@ -33,7 +34,7 @@ export class LivroComponent implements OnInit {
   goback(): void {
     this.router.navigate(['..'], { relativeTo: this.activatedRoute});
   }
-clickOnSubmit(): void {
+clickOnSubmit() {
   if (this.formEntity.valid) {
     this.submit.emit(this.formEntity.value);
   }

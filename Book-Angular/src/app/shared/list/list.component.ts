@@ -25,6 +25,7 @@ export class ListComponent implements OnInit {
   inputValue: string;
 
 
+
   constructor(private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
@@ -32,6 +33,9 @@ export class ListComponent implements OnInit {
       this.entities = value.entities;
     });
     this.keys = Object.keys(this.entities[0]);
+
+
+
   }
   search(): void{
     const obj = {
@@ -57,18 +61,7 @@ export class ListComponent implements OnInit {
     this.deleteEntity.emit(obj);
   }
 
-  toLimit(): void {
-    const limitTo = 1
 
-    const obj = {
-      limit: limitTo,
-      callback: (entities) => {
-        this.setEntities(entities)
-      }
-    };
-
-    this.limitEntity.emit(obj)
-  }
 
   private setEntities(entities) {
     this.entities = entities

@@ -1,0 +1,70 @@
+
+
+header[role="banner"] {
+}
+  #logo-main {
+    display: block;
+    margin: 20px auto;
+
+  }
+
+
+#navbar-primary.navbar-default {
+  background: transparent;
+  border: none;
+}
+  .navbar-nav {
+    width: 100%;
+    text-align: center;
+  }
+     .li {
+      display: inline-block;
+      float: none;
+     }
+      .a {
+        padding-left: 30px;
+        padding-right: 30px;
+        }
+        .bt-container {
+          text-align: center
+        }
+        .text-white,
+        .text-white-houve:hover,
+        .bt {
+          color: #FFFFFF !important;
+        }
+        .shadow-1,
+        .bt,
+        .container {
+          box-shadow: 0 1px 3px #EF4747;
+        }
+        .shadow-2,
+        .bt:hover,
+        .context_menu_pai,
+        .box_login,
+        .datepicker.dropdown-menu,
+        .dialogbox,
+        .overflow-menu ul {
+          box-shadow: 0 2px 5px 0 #EF4747;
+        }
+        .transition-1,
+        .bt {
+          transition: all .3s ease-out;
+          transition-property: all;
+          transition-duration: 0.3s;
+          transition-timing-function: ease-out;
+        }
+        .bt {
+          border: 0;
+          padding: 10px;
+          width: 200px;
+          height: 50px;
+          display: inline-block;
+          margin: 10px;
+          cursor: pointer;
+          border-radius: 4px;
+          background-color: #FF5757;
+          display: block;
+          margin: 20px auto;
+
+        }
