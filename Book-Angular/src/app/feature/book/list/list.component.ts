@@ -20,14 +20,10 @@ this.bookService.all().subscribe((value)=>{
   }
 
   deleteBook(event: DeleteEvent): void{
-    this.bookService.delete(event.id).subscribe(()=>{
+    this.bookService.delete(event.id).subscribe(() => {
       this.bookService.all().subscribe(event.callback);
     });
 
-  }
-
-  searchBook (event: SeacrhEvent): void{
-    this.bookService.all(event.query).subscribe(event.callback);
   }
 
 }

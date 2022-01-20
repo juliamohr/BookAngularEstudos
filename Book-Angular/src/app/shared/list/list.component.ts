@@ -37,20 +37,9 @@ export class ListComponent implements OnInit {
 
 
   }
-  search(): void{
-    const obj = {
-      query:this.inputValue,
-      callback: this.setEntities
 
-    };
-    this.searchEntity.emit(obj)
-  }
   goToAdd(): void {
     this.router.navigate(['add'], { relativeTo: this.activatedRoute });
-  }
-
-  editEntity(id: number): void {
-    this.router.navigate([id], { relativeTo: this.activatedRoute });
   }
 
   onDeleteEntity(id: number): void {
@@ -61,6 +50,18 @@ export class ListComponent implements OnInit {
     this.deleteEntity.emit(obj);
   }
 
+  toLimit(): void {
+    const limitTo = 1
+
+    const obj = {
+      limit: limitTo,
+      callback: (entities) => {
+        this.setEntities(entities)
+      }
+    };
+
+    this.limitEntity.emit(obj)
+  }
 
 
   private setEntities(entities) {

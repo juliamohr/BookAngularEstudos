@@ -37,4 +37,7 @@ export class BookService {
   setbook(book: Book){
     this._book.next(book);
   }
+  
 }
+
+
